@@ -21,6 +21,7 @@ The entire translation program is in a single file.
 Before adding features and making it bigger,
 split the file.
 This exercise has a limit on the loc (lines of code)
+50 lines of code 
 per file. See the workflow for details.
 
 ### New Feature Request
@@ -29,3 +30,11 @@ The color coding needs to be printed as a reference manual for wiring personnel.
 This manual is a mapping from the color-names to the corresponding numbers.
 Add a function that would format the color coding in a form that someone can print.
 Also resolve any coding guideline violations.
+
+### Key feedback
+Use language features like delegates and actions
+Separate tests using Xunit
+Use Mock logger to test Console.Writeline
+Code should be self-documenting
+Use DRY,SRP and Dependency injection where necessary
+follow KISS principle
