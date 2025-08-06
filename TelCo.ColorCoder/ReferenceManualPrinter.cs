@@ -1,21 +1,14 @@
 using System;
-using System.Drawing;
+using System.Linq;
 
 namespace TelCo.ColorCoder
 {
     public static class ReferenceManualPrinter
     {
-        public static void PrintReferenceManual(Action<string> logger)
-        {
-            int pairNumber = 1;
-            foreach (var major in ColorMap.MajorColors)
-            {
-                foreach (var minor in ColorMap.MinorColors)
-                {
-                    logger($"{pairNumber,2}: {major.Name,-10} | {minor.Name,-10}");
-                    pairNumber++;
-                }
-            }
-        }
+        public static void PrintReferenceManual(Action<string> logger) =>
+            ColorPairMapper.GetAllPairs()
+                .Select((pair, index) => $"{index + 1,2}: {pair.MajorColor.Name,-10} | {pair.MinorColor.Name}")
+                .ToList()
+                .ForEach(logger);
     }
 }
